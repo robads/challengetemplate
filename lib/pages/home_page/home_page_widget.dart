@@ -11,7 +11,6 @@ import '/flutter_flow/flutter_flow_video_player.dart';
 import '/pages/post_details/post_details_widget.dart';
 import '/pages/story_details/story_details_widget.dart';
 import '/pages/view_profile_page_other/view_profile_page_other_widget.dart';
-import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -654,13 +653,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                   0.0,
                                                                   0.0),
                                                       child: Text(
-                                                        valueOrDefault<String>(
-                                                          functions
-                                                              .likes(
-                                                                  socialFeedUserPostsRecord)
-                                                              .toString(),
-                                                          '0',
-                                                        ),
+                                                        '',
                                                         style: FlutterFlowTheme
                                                                 .of(context)
                                                             .bodyText2

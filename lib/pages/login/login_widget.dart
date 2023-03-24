@@ -243,7 +243,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 24.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
                       child: Container(
                         width: double.infinity,
                         decoration: BoxDecoration(
@@ -259,11 +259,11 @@ class _LoginWidgetState extends State<LoginWidget> {
                         ),
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              8.0, 0.0, 8.0, 0.0),
+                              56.0, 0.0, 26.0, 0.0),
                           child: TextFormField(
                             controller: _model.passwordController,
                             onFieldSubmitted: (_) async {},
-                            obscureText: !_model.passwordVisibility,
+                            obscureText: false,
                             decoration: InputDecoration(
                               labelText: 'Passwerd',
                               labelStyle:
@@ -271,47 +271,33 @@ class _LoginWidgetState extends State<LoginWidget> {
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   color: Color(0x00000000),
-                                  width: 2.0,
+                                  width: 1.0,
                                 ),
                                 borderRadius: BorderRadius.circular(8.0),
                               ),
                               focusedBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   color: Color(0x00000000),
-                                  width: 2.0,
+                                  width: 1.0,
                                 ),
                                 borderRadius: BorderRadius.circular(8.0),
                               ),
                               errorBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   color: Color(0x00000000),
-                                  width: 2.0,
+                                  width: 1.0,
                                 ),
                                 borderRadius: BorderRadius.circular(8.0),
                               ),
                               focusedErrorBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   color: Color(0x00000000),
-                                  width: 2.0,
+                                  width: 1.0,
                                 ),
                                 borderRadius: BorderRadius.circular(8.0),
                               ),
                               contentPadding: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 20.0, 24.0, 20.0),
-                              suffixIcon: InkWell(
-                                onTap: () => setState(
-                                  () => _model.passwordVisibility =
-                                      !_model.passwordVisibility,
-                                ),
-                                focusNode: FocusNode(skipTraversal: true),
-                                child: Icon(
-                                  _model.passwordVisibility
-                                      ? Icons.visibility_outlined
-                                      : Icons.visibility_off_outlined,
-                                  color: FlutterFlowTheme.of(context).grayIcon,
-                                  size: 22.0,
-                                ),
-                              ),
                             ),
                             style: FlutterFlowTheme.of(context).bodyText1,
                             validator: _model.passwordControllerValidator
@@ -371,23 +357,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 12.0, 0.0, 0.0),
                             child: FFButtonWidget(
-                              onPressed: () async {
-                                final user = await signInWithEmail(
-                                  context,
-                                  _model.emailController.text,
-                                  _model.passwordController.text,
-                                );
-                                if (user == null) {
-                                  return;
-                                }
-
-                                await Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) =>
-                                        NavBarPage(initialPage: 'homePage'),
-                                  ),
-                                );
+                              onPressed: () {
+                                print('Button pressed ...');
                               },
                               text: 'Login',
                               options: FFButtonOptions(

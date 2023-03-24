@@ -19,14 +19,11 @@ class LoginModel extends FlutterFlowModel {
   String? Function(BuildContext, String?)? emailControllerValidator;
   // State field(s) for password widget.
   TextEditingController? passwordController;
-  late bool passwordVisibility;
   String? Function(BuildContext, String?)? passwordControllerValidator;
 
   /// Initialization and disposal methods.
 
-  void initState(BuildContext context) {
-    passwordVisibility = false;
-  }
+  void initState(BuildContext context) {}
 
   void dispose() {
     emailController?.dispose();
