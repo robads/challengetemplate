@@ -7,7 +7,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_video_player.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/upload_media.dart';
+import '/flutter_flow/upload_data.dart';
 import '/main.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -75,7 +75,7 @@ class _CreateStoryWidgetState extends State<CreateStoryWidget> {
                           if (selectedMedia != null &&
                               selectedMedia.every((m) =>
                                   validateFileFormat(m.storagePath, context))) {
-                            setState(() => _model.isMediaUploading1 = true);
+                            setState(() => _model.isDataUploading1 = true);
                             var selectedUploadedFiles = <FFUploadedFile>[];
                             var downloadUrls = <String>[];
                             try {
@@ -105,7 +105,7 @@ class _CreateStoryWidgetState extends State<CreateStoryWidget> {
                             } finally {
                               ScaffoldMessenger.of(context)
                                   .hideCurrentSnackBar();
-                              _model.isMediaUploading1 = false;
+                              _model.isDataUploading1 = false;
                             }
                             if (selectedUploadedFiles.length ==
                                     selectedMedia.length &&
@@ -119,7 +119,7 @@ class _CreateStoryWidgetState extends State<CreateStoryWidget> {
                             } else {
                               setState(() {});
                               showUploadMessage(
-                                  context, 'Failed to upload media');
+                                  context, 'Failed to upload data');
                               return;
                             }
                           }
@@ -315,7 +315,7 @@ class _CreateStoryWidgetState extends State<CreateStoryWidget> {
                         if (selectedMedia != null &&
                             selectedMedia.every((m) =>
                                 validateFileFormat(m.storagePath, context))) {
-                          setState(() => _model.isMediaUploading2 = true);
+                          setState(() => _model.isDataUploading2 = true);
                           var selectedUploadedFiles = <FFUploadedFile>[];
                           var downloadUrls = <String>[];
                           try {
@@ -344,7 +344,7 @@ class _CreateStoryWidgetState extends State<CreateStoryWidget> {
                                 .toList();
                           } finally {
                             ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                            _model.isMediaUploading2 = false;
+                            _model.isDataUploading2 = false;
                           }
                           if (selectedUploadedFiles.length ==
                                   selectedMedia.length &&
@@ -357,8 +357,7 @@ class _CreateStoryWidgetState extends State<CreateStoryWidget> {
                             showUploadMessage(context, 'Success!');
                           } else {
                             setState(() {});
-                            showUploadMessage(
-                                context, 'Failed to upload media');
+                            showUploadMessage(context, 'Failed to upload data');
                             return;
                           }
                         }
@@ -413,7 +412,7 @@ class _CreateStoryWidgetState extends State<CreateStoryWidget> {
                         if (selectedMedia != null &&
                             selectedMedia.every((m) =>
                                 validateFileFormat(m.storagePath, context))) {
-                          setState(() => _model.isMediaUploading3 = true);
+                          setState(() => _model.isDataUploading3 = true);
                           var selectedUploadedFiles = <FFUploadedFile>[];
                           var downloadUrls = <String>[];
                           try {
@@ -442,7 +441,7 @@ class _CreateStoryWidgetState extends State<CreateStoryWidget> {
                                 .toList();
                           } finally {
                             ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                            _model.isMediaUploading3 = false;
+                            _model.isDataUploading3 = false;
                           }
                           if (selectedUploadedFiles.length ==
                                   selectedMedia.length &&
@@ -455,8 +454,7 @@ class _CreateStoryWidgetState extends State<CreateStoryWidget> {
                             showUploadMessage(context, 'Success!');
                           } else {
                             setState(() {});
-                            showUploadMessage(
-                                context, 'Failed to upload media');
+                            showUploadMessage(context, 'Failed to upload data');
                             return;
                           }
                         }

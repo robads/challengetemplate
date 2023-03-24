@@ -5,7 +5,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/upload_media.dart';
+import '/flutter_flow/upload_data.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -120,7 +120,7 @@ class _CreateDogProfileNewWidgetState extends State<CreateDogProfileNewWidget> {
                       if (selectedMedia != null &&
                           selectedMedia.every((m) =>
                               validateFileFormat(m.storagePath, context))) {
-                        setState(() => _model.isMediaUploading = true);
+                        setState(() => _model.isDataUploading = true);
                         var selectedUploadedFiles = <FFUploadedFile>[];
                         var downloadUrls = <String>[];
                         try {
@@ -149,7 +149,7 @@ class _CreateDogProfileNewWidgetState extends State<CreateDogProfileNewWidget> {
                               .toList();
                         } finally {
                           ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                          _model.isMediaUploading = false;
+                          _model.isDataUploading = false;
                         }
                         if (selectedUploadedFiles.length ==
                                 selectedMedia.length &&
@@ -162,7 +162,7 @@ class _CreateDogProfileNewWidgetState extends State<CreateDogProfileNewWidget> {
                           showUploadMessage(context, 'Success!');
                         } else {
                           setState(() {});
-                          showUploadMessage(context, 'Failed to upload media');
+                          showUploadMessage(context, 'Failed to upload data');
                           return;
                         }
                       }

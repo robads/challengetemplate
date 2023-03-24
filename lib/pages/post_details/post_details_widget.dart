@@ -147,6 +147,8 @@ class _PostDetailsWidgetState extends State<PostDetailsWidget> {
                                       onPressed: () async {
                                         await showModalBottomSheet(
                                           isScrollControlled: true,
+                                          backgroundColor: Color(0x00000000),
+                                          barrierColor: Color(0x00000000),
                                           context: context,
                                           builder: (context) {
                                             return Padding(

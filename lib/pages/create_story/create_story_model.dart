@@ -7,7 +7,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_video_player.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/upload_media.dart';
+import '/flutter_flow/upload_data.dart';
 import '/main.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -18,7 +18,7 @@ import 'package:provider/provider.dart';
 class CreateStoryModel extends FlutterFlowModel {
   ///  State fields for stateful widgets in this page.
 
-  bool isMediaUploading1 = false;
+  bool isDataUploading1 = false;
   FFUploadedFile uploadedLocalFile1 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
   String uploadedFileUrl1 = '';
@@ -26,12 +26,12 @@ class CreateStoryModel extends FlutterFlowModel {
   // State field(s) for storyDescription widget.
   TextEditingController? storyDescriptionController;
   String? Function(BuildContext, String?)? storyDescriptionControllerValidator;
-  bool isMediaUploading2 = false;
+  bool isDataUploading2 = false;
   FFUploadedFile uploadedLocalFile2 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
   String uploadedFileUrl2 = '';
 
-  bool isMediaUploading3 = false;
+  bool isDataUploading3 = false;
   FFUploadedFile uploadedLocalFile3 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
   String uploadedFileUrl3 = '';

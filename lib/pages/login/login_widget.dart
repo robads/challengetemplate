@@ -226,9 +226,15 @@ class _LoginWidgetState extends State<LoginWidget> {
                                 borderRadius: BorderRadius.circular(8.0),
                               ),
                               contentPadding: EdgeInsetsDirectional.fromSTEB(
-                                  8.0, 0.0, 0.0, 0.0),
+                                  16.0, 20.0, 24.0, 20.0),
+                              suffixIcon: Icon(
+                                Icons.email,
+                                color: Color(0xFF757575),
+                                size: 22.0,
+                              ),
                             ),
                             style: FlutterFlowTheme.of(context).bodyText1,
+                            textAlign: TextAlign.start,
                             validator: _model.emailControllerValidator
                                 .asValidator(context),
                           ),
@@ -256,9 +262,10 @@ class _LoginWidgetState extends State<LoginWidget> {
                               8.0, 0.0, 8.0, 0.0),
                           child: TextFormField(
                             controller: _model.passwordController,
+                            onFieldSubmitted: (_) async {},
                             obscureText: !_model.passwordVisibility,
                             decoration: InputDecoration(
-                              labelText: 'Password',
+                              labelText: 'Passwerd',
                               labelStyle:
                                   FlutterFlowTheme.of(context).bodyText2,
                               enabledBorder: OutlineInputBorder(
@@ -374,16 +381,12 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   return;
                                 }
 
-                                await Navigator.pushAndRemoveUntil(
+                                await Navigator.push(
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) =>
-                                        PushNotificationsHandler(
-                                      child:
-                                          NavBarPage(initialPage: 'homePage'),
-                                    ),
+                                        NavBarPage(initialPage: 'homePage'),
                                   ),
-                                  (r) => false,
                                 );
                               },
                               text: 'Login',

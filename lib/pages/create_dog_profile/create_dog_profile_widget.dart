@@ -4,7 +4,7 @@ import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/upload_media.dart';
+import '/flutter_flow/upload_data.dart';
 import '/pages/create_your_profile/create_your_profile_widget.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -117,7 +117,7 @@ class _CreateDogProfileWidgetState extends State<CreateDogProfileWidget> {
                         if (selectedMedia != null &&
                             selectedMedia.every((m) =>
                                 validateFileFormat(m.storagePath, context))) {
-                          setState(() => _model.isMediaUploading = true);
+                          setState(() => _model.isDataUploading = true);
                           var selectedUploadedFiles = <FFUploadedFile>[];
                           var downloadUrls = <String>[];
                           try {
@@ -146,7 +146,7 @@ class _CreateDogProfileWidgetState extends State<CreateDogProfileWidget> {
                                 .toList();
                           } finally {
                             ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                            _model.isMediaUploading = false;
+                            _model.isDataUploading = false;
                           }
                           if (selectedUploadedFiles.length ==
                                   selectedMedia.length &&
@@ -159,8 +159,7 @@ class _CreateDogProfileWidgetState extends State<CreateDogProfileWidget> {
                             showUploadMessage(context, 'Success!');
                           } else {
                             setState(() {});
-                            showUploadMessage(
-                                context, 'Failed to upload media');
+                            showUploadMessage(context, 'Failed to upload data');
                             return;
                           }
                         }

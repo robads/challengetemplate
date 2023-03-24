@@ -9,7 +9,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_video_player.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/place.dart';
-import '/flutter_flow/upload_media.dart';
+import '/flutter_flow/upload_data.dart';
 import '/main.dart';
 import 'dart:io';
 import '/flutter_flow/custom_functions.dart' as functions;
@@ -21,7 +21,7 @@ import 'package:provider/provider.dart';
 class CreatePostModel extends FlutterFlowModel {
   ///  State fields for stateful widgets in this page.
 
-  bool isMediaUploading = false;
+  bool isDataUploading = false;
   FFUploadedFile uploadedLocalFile =
       FFUploadedFile(bytes: Uint8List.fromList([]));
   String uploadedFileUrl = '';

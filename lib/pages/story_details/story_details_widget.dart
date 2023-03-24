@@ -309,6 +309,12 @@ class _StoryDetailsWidgetState extends State<StoryDetailsWidget> {
                                                                     await showModalBottomSheet(
                                                                       isScrollControlled:
                                                                           true,
+                                                                      backgroundColor:
+                                                                          Color(
+                                                                              0x00000000),
+                                                                      barrierColor:
+                                                                          Color(
+                                                                              0x00000000),
                                                                       context:
                                                                           context,
                                                                       builder:
@@ -449,6 +455,8 @@ class _StoryDetailsWidgetState extends State<StoryDetailsWidget> {
                                         onTap: () async {
                                           await showModalBottomSheet(
                                             isScrollControlled: true,
+                                            backgroundColor: Color(0x00000000),
+                                            barrierColor: Color(0x00000000),
                                             context: context,
                                             builder: (context) {
                                               return Padding(
